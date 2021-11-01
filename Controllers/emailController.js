@@ -68,6 +68,9 @@ const controller = {
                     message: 'There was a problem',
                     data: err
                  })
+             })
+             .catch(err => {
+                 console.log(err);
              });        
         }catch(e){
             makeHttpError(res, e);
