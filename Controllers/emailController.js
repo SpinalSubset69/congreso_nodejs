@@ -10,7 +10,10 @@ const controller = {
         try{
             const validEmail = makeEmail(userData);
             const transporter = nodemailer.createTransport({
-                service: 'gmail' ,
+                pool: true ,
+                host: "smtp.gmail.com",
+                port: 465,
+                secure: true,
                 auth: {
                     user: config.emailSender,
                     pass: config.emailSenderPassword
