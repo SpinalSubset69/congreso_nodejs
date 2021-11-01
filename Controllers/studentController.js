@@ -47,7 +47,10 @@ const controller = {
                 const student = new Student(validateStudent);   
                 student.AddActivity(activity);
                 await student.save();
-                res.status(200).json(student);
+                res.status(200).json({
+                    statusCode: 200,
+                    data: student
+                });
                 return;
             }catch(e){
                 makeHttpError(res, e);
