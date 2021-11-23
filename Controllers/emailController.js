@@ -1,5 +1,6 @@
 const config = require("../Config/index");
 const nodemailer = require("nodemailer");
+const smtpTransport = require('nodemailer-smtp-transport')
 const makeEmail = require("../Factory/email");
 const makeHttpError = require("../Helpers/makeHttpError");
 const handlebars = require("handlebars");
@@ -16,16 +17,16 @@ const controller = {
     );
     try {
       const validEmail = makeEmail(userData);
-      const transporter = nodemailer.createTransport({
-        pool: true,
-        host: "smtp.gmail.com",
-        port: 465,
-        secure: true,
+
+      const transporter = nodemailer.createTransport(smtpTransport({
+        service: 'gmail',
+        host: 'smtp.gmail.com',
         auth: {
-          user: config.emailSender,
-          pass: config.emailSenderPassword,
-        },
-      });
+            user: config.emailSender,
+            pass: config.emailSenderPassword
+          }
+        })
+      );
       const template = handlebars.compile(emailTemplateSource);
       const htmlToSend = template({
         email: validEmail.email,
