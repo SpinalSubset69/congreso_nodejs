@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec babel-node index.js",
     "build" : "webpack --mode=production --config webpack.config.server.js",
-    "start": "npm run build && node ./dist/server.generated.js"
+    "start": "node ./dist/server.generated.js"
   },
   "keywords": [],
   "author": "",
