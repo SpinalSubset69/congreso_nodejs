@@ -1,0 +1,58 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <title>Response</title>
+
+    <style>
+      @import
+      url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+      body{ font-family: 'Roboto', sans-serif; } 
+      .message-container{ 
+        width:100vw; 
+        height: 100vh; 
+        display: flex; 
+        flex-direction: column;
+      justify-content: center; align-items: center; } 
+      .header{ background:
+      #0F2C67; color: white; padding: 5px; border-radius: 10px; }
+      .data-container{ display: flex; } 
+      .data{ display: flex; } .
+      data p{
+      margin-left: 15px; }
+    </style>
+  </head>
+  <body>
+    <div class="message-container">
+      <div class="header">
+        <h1>Congreo UAMM 2021</h1>
+      </div>
+
+      <div class="data-container">
+        <div class="data">
+          <p>Correo: </p>
+          <p>{{email}}</p>
+        </div>
+        <div class="data">
+          <p>Asunto: </p>
+          <p>{{subject}}</p>
+        </div>
+      </div>
+      <div class="data-container">
+        <div class="data">
+          <p>Telefono: </p>
+          <p>{{phone}}</p>
+        </div>
+        <div class="data">
+          <p>Nombre: </p>
+          <p>{{name}}</p>
+        </div>
+      </div>
+      <div>
+        <h2 class="header">Mensaje:</h2>
+        <p>{{body}}</p>
+      </div>
+    </div>`
+  </body>
+</html>
