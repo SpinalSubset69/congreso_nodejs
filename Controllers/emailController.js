@@ -6,7 +6,6 @@ const makeHttpError = require("../Helpers/makeHttpError");
 const handlebars = require("handlebars");
 const fs = require("fs");
 const path = require("path");
-const Email = require("email-templates");
 
 const controller = {
   sendEmail: async (req, res) => {
